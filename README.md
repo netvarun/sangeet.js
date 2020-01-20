@@ -16,7 +16,7 @@ rename the songs accordingly.
 Under the hood it primarily devolves to `youtube-dl` and `ffmpeg` for all the heavy-lifting. `sangeet.js` takes a
 batteries-included, sane-defaults, best quality (ymmv) approach to dealing with the crazy number of codecs that youtube
 runs.
-In the process, I ended up learning a lot about ffmpeg (amazing tool!) and life.
+In the process, I ended up learning a lot about ffmpeg (amazing tool!) and life. Of course, all credit goes to Stackoverflow.
 
 > Given this 
 ![Spreadsheet](spreadsheet.png)
@@ -57,6 +57,17 @@ Export this spreadsheet as csv to the folder of `sangeet.js`
 
 ```sh
 node sangeet.js NAME_OF_SPREADSHEET.csv
+```
+And voila, you will see a new folder called `run_...` which contain all the files. Note it will have a lot of
+intermediary files. You want to look for all the files that end with `_combined.m4a`. This is the final mixtape output
+for you to share with your party.
+
+If you want all the intermediary files to be cleared, you can run the command below (basically with an additional
+parameter `1`). Note: Only run this if you are ok with the risk of a `rm` command being run (more specifically `grep -v
+combined.m4a | xargs -n1 rm`) (Cue to `Disclaimer`) 
+
+```sh
+node sangeet.js NAME_OF_SPREADSHEET.csv 1
 ```
 
 ## Author

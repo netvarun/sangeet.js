@@ -14,6 +14,14 @@ if (process.argv.length <= 2) {
     process.exit(-1);
 }
 const csvFile = process.argv[2];
+let deleteStuff = 0;
+
+//Super hackish way to see if cleanup flag is present
+if(process.argv.length == 4) {
+    if(process.argv[3] == 1) {
+        deleteStuff = 1;
+    }
+}
  
 
 if (!fs.existsSync(dir)){
@@ -134,6 +142,19 @@ songs.forEach(function(obj) {
     oldScene = obj.scene;
     
     });
+
+//Too lazy to refactor
+
+const finalCmd = 'cp combine.js ' + dir + ' && cd ' + dir + ' && ls -1 *file.txt | xargs -t -n1 node combine.js && ls -1  && cd ..';
+
+//Super dangerous
+const delCmd = 'cp combine.js ' + dir + ' && cd ' + dir + ' && ls -1 *file.txt | xargs -t -n1 node combine.js && ls -1 | grep -v combined.m4a | xargs -n1 rm && cd ..';
+if(deleteStuff) {
+    execSync(delCmd);
+}
+else {
+    execSync(finalCmd);
+}
 
   });
 
