@@ -19,10 +19,10 @@ runs.
 In the process, I ended up learning a lot about ffmpeg (amazing tool!) and life.
 
 > Given this 
-![Spreadsheet](spreadsheet.jpg)
+![Spreadsheet](spreadsheet.pngg)
 
 > get this
-![Files](files.jpg)
+![Files](files.png)
 
 ## Features
 1. Idempotent® - Each run will create a separate folder so your songs won't get mixed up.
