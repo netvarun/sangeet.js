@@ -9,6 +9,13 @@ const path = require('path')
 
 const dir = "run_" + Math.floor(Date.now() / 1000);
 
+if (process.argv.length <= 2) {
+    console.log("Usage: node sangeet.js PATH_TO_SONG_LIST.csv");
+    process.exit(-1);
+}
+const csvFile = process.argv[2];
+ 
+
 if (!fs.existsSync(dir)){
     fs.mkdirSync(dir);
 }
@@ -27,7 +34,7 @@ function parseStr(str) {
     return str;
 }
 
-fs.createReadStream('sangeet_songs.csv')
+fs.createReadStream(csvFile)
   .pipe(csv())
   .on('data', (data) => songs.push(data))
   .on('end', () => {
@@ -39,10 +46,10 @@ fs.createReadStream('sangeet_songs.csv')
     group: 'Couple Dance',
     start_time: '',
     stop_time: '',
-    pos: '',
-    time_length: '',
-    total_time: '',
-    alternative_times: '' } ]
+    fade_in: '',
+    fade_out: '',
+    pos: ''
+     } ]
 */
 
 
@@ -89,7 +96,7 @@ songs.forEach(function(obj) {
 
         if(obj.start_time != "" && obj.stop_time != "") {
             const trimCmd = 'ffmpeg -y -i ' + songName + ' -ss ' + obj.start_time  + ' -to ' + obj.stop_time  + ' -c copy ' + trimmedName;
-            const fadeCmd = 'ffmpeg -y -i ' + trimmedName + ' -filter_complex "afade=d=0.5, areverse, afade=d=2.0, areverse" ' + fadedName;
+            const fadeCmd = 'ffmpeg -y -i ' + trimmedName + ' -filter_complex "afade=d=' + obj.fade_in  + ', areverse, afade=d='+ obj.fade_out  +', areverse" ' + fadedName; 
             console.log("Trimming and fading..");
             console.log(trimCmd);
             execSync(trimCmd);
