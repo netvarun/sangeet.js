@@ -19,7 +19,7 @@ runs.
 In the process, I ended up learning a lot about ffmpeg (amazing tool!) and life.
 
 > Given this 
-![Spreadsheet](spreadsheet.pngg)
+![Spreadsheet](spreadsheet.png)
 
 > get this
 ![Files](files.png)
