@@ -51,7 +51,7 @@ npm install
 ## Usage
 
 Clone this spreadsheet:
-https://docs.google.com/spreadsheets/d/1CM-PR-QzbHH8hFtqQuNrBGXUhL30l1G8rxtxPedhqic/edit?usp=sharing
+https://docs.google.com/spreadsheets/d/1CM-PR-QzbHH8hFtqQuNrBGXUhL30l1G8rxtxPedhqic/edit#gid=0
 
 Export this spreadsheet as csv to the folder of `sangeet.js`
 
