@@ -62,7 +62,7 @@ And voila, you will see a new folder called `run_...` which contain all the file
 intermediary files. You want to look for all the files that end with `_combined.m4a`. This is the final mixtape output
 for you to share with your party.
 
-If you want all the intermediary files to be cleared, you can run the command below (basically with an additional
+If you want all the intermediary files to be cleared, you can instead run the command below (basically with an additional
 parameter `1`). Note: Only run this if you are ok with the risk of a `rm` command being run (more specifically `grep -v
 combined.m4a | xargs -n1 rm`) (Cue to `Disclaimer`) 
 
