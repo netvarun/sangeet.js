@@ -32,9 +32,9 @@ bride/groom/in-laws/cousins/uncles/aunts/grandmas/grandpas/great-great-uncle/cou
 realtime audio mixtape generation
 
 ## Disclaimer
-This was hacked together over a Sunday to bring some order and sanity into the house and our lives. 
-Also code was written how a recovering perl hacker now business guy would write in node.js. Caveat emptor.
-Only tested on a Mac (don't see any reason why it won't work on linux. Windows I have no clue)
+1. This was hacked together over a Sunday to bring some order and sanity into the house and our lives. 
+2. Code is written exactly how a recovering perl hacker now business guy would write in node.js. Caveat emptor.
+3. Only tested on a Mac (don't see any reason why it won't work on linux. Windows I have no clue)
 
 ## Requirements
 
